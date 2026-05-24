@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}UZT Cargo - logistika platformasi{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">O'zbekiston ichki bozori uchun</p>
+    <h1>Yuk, haydovchi va mijozlarni bitta tizimda boshqaring</h1>
+    <p class="lead">UZT Cargo logistika kompaniyalari uchun web admin, public sayt va Telegram botdan iborat yagona platforma.</p>
+    <a class="button" href="{% url 'dashboard' %}">Web adminga o'tish</a>
+  </div>
+  <div class="metric-panel">
+    <div><strong>{{ stats.loads }}</strong><span>Yuklar</span></div>
+    <div><strong>{{ stats.drivers }}</strong><span>Haydovchilar</span></div>
+    <div><strong>{{ stats.clients }}</strong><span>Mijozlar</span></div>
+  </div>
+</section>
+{% endblock %}

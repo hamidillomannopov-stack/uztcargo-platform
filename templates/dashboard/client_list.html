@@ -1,0 +1,15 @@
+{% extends 'dashboard/layout.html' %}
+{% block title %}Mijozlar - UZT Cargo{% endblock %}
+{% block dashboard_content %}
+<h1>Mijozlar</h1>
+<table>
+  <thead><tr><th>Kompaniya</th><th>Mas'ul</th><th>Telefon</th><th>Telegram</th></tr></thead>
+  <tbody>
+    {% for client in clients %}
+      <tr><td>{{ client.company_name }}</td><td>{{ client.manager_name }}</td><td>{{ client.phone }}</td><td>{{ client.telegram_username }}</td></tr>
+    {% empty %}
+      <tr><td colspan="4">Mijozlar yo'q.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

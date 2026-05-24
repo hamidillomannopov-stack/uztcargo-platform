@@ -1,0 +1,10 @@
+{% extends 'dashboard/layout.html' %}
+{% block title %}Yangi yuk - UZT Cargo{% endblock %}
+{% block dashboard_content %}
+<h1>Yangi yuk</h1>
+<form method="post" class="form-grid">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Saqlash</button>
+</form>
+{% endblock %}

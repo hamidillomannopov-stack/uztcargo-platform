@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>Yuk</th>
+      <th>Yo'nalish</th>
+      <th>Joylagan</th>
+      <th>Haydovchi</th>
+      <th>Avtomashina</th>
+      <th>Status</th>
+      <th>Narx</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for load in loads %}
+      <tr>
+        <td>{{ load.title }}</td>
+        <td>{{ load.get_from_region_display|default:load.from_city }} -> {{ load.get_to_region_display|default:load.to_city }}</td>
+        <td>{{ load.created_by_profile|default:'-' }}</td>
+        <td>{{ load.assigned_driver_profile|default:load.driver|default:'-' }}</td>
+        <td>{{ load.vehicle_type|default:'-' }}</td>
+        <td>{{ load.get_status_display }}</td>
+        <td>{{ load.price_text|default:load.client_price }}</td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="6">Yuklar yo'q.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>

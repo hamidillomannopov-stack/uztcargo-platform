@@ -1,0 +1,9 @@
+{% extends 'dashboard/layout.html' %}
+{% block title %}Yuklar - UZT Cargo{% endblock %}
+{% block dashboard_content %}
+<div class="page-head">
+  <h1>Admin yuklari</h1>
+  <a class="button" href="{% url 'load_create' %}">Yangi yuk</a>
+</div>
+{% include 'dashboard/partials/load_table.html' with loads=loads %}
+{% endblock %}

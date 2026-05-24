@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Kirish - UZT Cargo{% endblock %}
+{% block content %}
+<section class="auth-box">
+  <h1>Web admin</h1>
+  <form method="post" class="form-panel">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Kirish</button>
+  </form>
+</section>
+{% endblock %}

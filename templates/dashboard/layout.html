@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="dashboard-shell">
+  <aside class="sidebar">
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    <a href="{% url 'load_list' %}">Yuklar</a>
+    <a href="{% url 'driver_list' %}">Haydovchilar</a>
+    <a href="{% url 'client_list' %}">Mijozlar</a>
+  </aside>
+  <section class="dashboard-content">
+    {% block dashboard_content %}{% endblock %}
+  </section>
+</section>
+{% endblock %}

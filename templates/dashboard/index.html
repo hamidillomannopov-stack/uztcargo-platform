@@ -1,0 +1,23 @@
+{% extends 'dashboard/layout.html' %}
+{% block title %}Dashboard - UZT Cargo{% endblock %}
+{% block dashboard_content %}
+<div class="page-head">
+  <h1>Dashboard</h1>
+  <a class="button" href="{% url 'load_create' %}">Yangi yuk</a>
+</div>
+<div class="cards">
+  <div><strong>{{ stats.loads }}</strong><span>Admin yuklari</span></div>
+  <div><strong>{{ stats.active_loads }}</strong><span>Aktiv admin yuklari</span></div>
+  <div><strong>{{ stats.drivers }}</strong><span>Admin haydovchilar</span></div>
+  <div><strong>{{ stats.clients }}</strong><span>Mijozlar</span></div>
+</div>
+<h2>Bot foydalanuvchilari</h2>
+<div class="cards role-cards">
+  <div><strong>{{ stats.bot_users }}</strong><span>Jami foydalanuvchilar</span></div>
+  <div><strong>{{ stats.cargo_owners }}</strong><span>Yuk egalari</span></div>
+  <div><strong>{{ stats.bot_drivers }}</strong><span>Haydovchilar</span></div>
+  <div><strong>{{ stats.logists }}</strong><span>Logistlar</span></div>
+</div>
+<h2>So'nggi admin yuklari</h2>
+{% include 'dashboard/partials/load_table.html' with loads=loads %}
+{% endblock %}
