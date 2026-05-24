@@ -1,17 +1,74 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}UZT Cargo - logistika platformasi{% endblock %}
 {% block content %}
-<section class="hero">
+<section class="site-hero" style="background-image: linear-gradient(90deg, rgba(9, 30, 45, .86), rgba(9, 30, 45, .58), rgba(9, 30, 45, .10)), url('{% static 'img/logistics-hero.png' %}');">
+  <div class="site-hero-inner">
+    <p class="eyebrow">O'zbekiston ichki logistika bozori</p>
+    <h1>Yuk egasi, logist va haydovchini bitta platformada ulang</h1>
+    <p class="lead">UZT Cargo yuklarni tez joylash, haydovchiga biriktirish, Telegram kanal orqali e'lon tarqatish va jarayonni web admin orqali boshqarish uchun yaratilgan.</p>
+    <div class="hero-actions">
+      <a class="button" href="{% url 'login' %}">Web adminga kirish</a>
+      <a class="button secondary-button" href="#services">Xizmatlarni ko'rish</a>
+    </div>
+  </div>
+</section>
+
+<section class="stat-strip">
+  <div><strong>{{ stats.loads }}</strong><span>Yuklar</span></div>
+  <div><strong>{{ stats.drivers }}</strong><span>Haydovchilar</span></div>
+  <div><strong>{{ stats.clients }}</strong><span>Mijozlar</span></div>
+</section>
+
+<section class="site-section" id="services">
+  <div class="section-head">
+    <p class="eyebrow">Platforma imkoniyatlari</p>
+    <h2>Logistika operatsiyalari uchun yagona ish maydoni</h2>
+  </div>
+  <div class="feature-grid">
+    <article>
+      <h3>Yuk e'lonlari</h3>
+      <p>Yuk egasi yoki logist bot orqali yukni joylaydi, e'lon kanalga avtomatik chiqadi va birinchi qabul qilgan haydovchiga biriktiriladi.</p>
+    </article>
+    <article>
+      <h3>Haydovchi bazasi</h3>
+      <p>Haydovchilar telefon, mashina raqami va roli bilan ro'yxatdan o'tadi. Qabul qilingan yuklar tizimda saqlanadi.</p>
+    </article>
+    <article>
+      <h3>Web admin</h3>
+      <p>Admin panelda foydalanuvchilar, haydovchilar, logistlar, yuk egalari va qo'lda tayyorlangan yuklar nazorat qilinadi.</p>
+    </article>
+  </div>
+</section>
+
+<section class="site-section split-section">
   <div>
-    <p class="eyebrow">O'zbekiston ichki bozori uchun</p>
-    <h1>Yuk, haydovchi va mijozlarni bitta tizimda boshqaring</h1>
-    <p class="lead">UZT Cargo logistika kompaniyalari uchun web admin, public sayt va Telegram botdan iborat yagona platforma.</p>
-    <a class="button" href="{% url 'dashboard' %}">Web adminga o'tish</a>
+    <p class="eyebrow">Yuk egasi va logistlar uchun</p>
+    <h2>Yuk joylash jarayoni tartibli va tez</h2>
+    <p class="section-copy">Qayerdan, qayerga, yuk hajmi, og'irligi, yuk turi, avtomashina turi, narx, telefon va izoh bitta ketma-ketlikda yig'iladi. Kerak bo'lsa yuk egasi yoki logist botdan e'lonni bekor qilishi mumkin.</p>
   </div>
-  <div class="metric-panel">
-    <div><strong>{{ stats.loads }}</strong><span>Yuklar</span></div>
-    <div><strong>{{ stats.drivers }}</strong><span>Haydovchilar</span></div>
-    <div><strong>{{ stats.clients }}</strong><span>Mijozlar</span></div>
+  <div class="steps">
+    <div><span>01</span><p>Viloyat va yo'nalish tanlanadi</p></div>
+    <div><span>02</span><p>Yuk va avtomashina talablari kiritiladi</p></div>
+    <div><span>03</span><p>E'lon kanalga chiqadi va haydovchilar ko'radi</p></div>
   </div>
+</section>
+
+<section class="site-section driver-band">
+  <div>
+    <p class="eyebrow">Haydovchilar uchun</p>
+    <h2>Yaqin yuklarni topish va tez qabul qilish</h2>
+    <p>Haydovchi lokatsiyasini yuboradi, bot esa unga yaqin viloyatdagi aktiv yuklarni ko'rsatadi. Qabul qilish tugmasi yukni birinchi bosgan haydovchiga biriktiradi.</p>
+  </div>
+  <a class="button secondary-button" href="{% url 'login' %}">Boshqaruv paneli</a>
+</section>
+
+<section class="site-section cta-section">
+  <div>
+    <p class="eyebrow">UZT Cargo</p>
+    <h2>Ichki bozorda yuklarni boshqarishni raqamlashtiring</h2>
+    <p>Platforma web admin, Telegram bot va public saytdan iborat. Keyingi bosqichda xarita, live tracking, to'lovlar va ko'p kanalga tarqatish ulanadi.</p>
+  </div>
+  <a class="button" href="{% url 'login' %}">Tizimga kirish</a>
 </section>
 {% endblock %}
