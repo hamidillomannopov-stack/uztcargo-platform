@@ -18,8 +18,8 @@ class ClientAdmin(admin.ModelAdmin):
 
 @admin.register(Driver)
 class DriverAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'phone', 'truck_number', 'status', 'is_active')
-    list_filter = ('status', 'is_active')
+    list_display = ('full_name', 'phone', 'truck_number', 'current_region', 'status', 'is_active')
+    list_filter = ('status', 'is_active', 'current_region')
     search_fields = ('full_name', 'phone', 'truck_number')
 
 

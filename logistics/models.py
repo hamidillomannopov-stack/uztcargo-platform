@@ -1,4 +1,5 @@
 from decimal import Decimal
+import uuid
 
 from django.db import models
 
@@ -75,6 +76,10 @@ class Driver(models.Model):
     phone = models.CharField(max_length=50, blank=True)
     truck_number = models.CharField(max_length=50, blank=True)
     telegram_id = models.BigIntegerField(null=True, blank=True)
+    mobile_token = models.UUIDField(default=uuid.uuid4, db_index=True)
+    last_latitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
+    last_longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
+    current_region = models.CharField(max_length=40, choices=UZBEKISTAN_REGIONS, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
